@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Aile Paneli</title>
+</head>
+<body>
+
+<script>
+let sifre = prompt("Şifreyi gir:");
+
+if (sifre !== "aile123") {
+  alert("Yanlış şifre");
+  document.body.innerHTML = "";
+}
+</script>
+
+<h2>Aile Bilgi Paneli</h2>
+
+<input type="text" id="arama" placeholder="X veya Y yaz">
+<button onclick="bul()">Ara</button>
+
+<p id="sonuc"></p>
+
+<script>
+function bul() {
+  const veriler = {
+    "X": "Annem",
+    "Y": "Babam",
+    "Z": "Kardeşim"
+  };
+
+  let girilen = document.getElementById("arama").value.toUpperCase();
+  document.getElementById("sonuc").innerText =
+    veriler[girilen] || "Bulunamadı";
+}
+</script>
+
+</body>
+</html>
